@@ -49,7 +49,14 @@ app.get('/comments/:id', (req, res) => {
   res.render('comments/show', {comment})
 })
 
-
+app.patch('/comments/:id', (req, res) => {
+  const {id} = req.params
+  const newCommentText = req.body.comment
+  const foundComment = comments.find(c => c.id === id)
+  foundComment.comment = newCommentText
+  res.send('pacthing something')
+  res.redirect('/comments')
+})
 
 app.post('/comments', (req, res) => {
   const { username, comment } = req.body
