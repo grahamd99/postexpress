@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title aria-live="assertive">Edit Comment</title>
+    </head>
+    <body>
+    	<h1>Edit</h1>
+    	<form method="POST" action="/comments/<%=comment.id%>/?_method=PATCH">
+        	<textarea name="comment" id="" cols="30" rows="10">
+        		<%= comment.comment %>
+        	</textarea>
+            <button>Save</button>
+        </form>
+        <a href="/comments">Return to comments</a>
+    <body>
+</html>
